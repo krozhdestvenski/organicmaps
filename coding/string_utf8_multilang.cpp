@@ -97,7 +97,8 @@ bool StringUtf8Multilang::IsServiceLang(std::string_view lang)
       || lang == kLanguages[kOldNameCode].m_code;
 }
 // static
-static const StringUtf8Multilang::Languages allLanguages = []() {
+static const StringUtf8Multilang::Languages allLanguages = []()
+{
   StringUtf8Multilang::Languages langs;
   std::copy_if(kLanguages.cbegin(), kLanguages.cend(), std::back_inserter(langs),
                [](StringUtf8Multilang::Lang const & lang) { return lang.m_code != StringUtf8Multilang::kReservedLang; });
